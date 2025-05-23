@@ -4,7 +4,8 @@ from .models import Post
 
 def home(request):
     posts = Post.objects.all().order_by('-created_at')
-    return render(request, 'news/base.html', {'posts': posts})
+    topics = Post.objects.values_list('topic', flat=True).distinct()
+    return render(request, 'news/home.html', {'posts': posts, 'topics': topics})
 
 
 
