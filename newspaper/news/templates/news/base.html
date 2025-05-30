@@ -18,11 +18,17 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'domashniye_kotleti' %}">Home</a>
               </li>
-              {% for temi in topics %}
+              {% for tema in topics %}
               <li class="nav-item">
-                <a class="nav-link" href="#">{{ temi }}</a>
+                <a class="nav-link" href="{% url 'filtr_po_temam' tema %}">
+                  {% if tema == nazvaniye_temi %}
+                    <h5 style="color: blue;">{{ tema }}</h5>
+                  {% else %}
+                    {{ tema }}
+                  {% endif %}                 
+                </a>
               </li>
               {% endfor %}
              
