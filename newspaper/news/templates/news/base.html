@@ -20,6 +20,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'domashniye_kotleti' %}">Home</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/admin">Admin</a>
+              </li>
               {% for tema in topics %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'filtr_po_temam' tema %}">
