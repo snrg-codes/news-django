@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "news",
     "ckeditor",
+    "ckeditor_uploader",
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,22 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+MEDIA_URL = "media/" # xurshid.uz/media/kartinaka.jpg
+MEDIA_ROOT = BASE_DIR / "media/"
+
+CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+        'extraPlugins': ','.join([
+            'codesnippet','uploadimage', 'image2'
+        ]),
+    },
+}
 
 
 # Default primary key field type
