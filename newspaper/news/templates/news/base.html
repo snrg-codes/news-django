@@ -25,9 +25,9 @@
               </li>
               {% for tema in topics %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'filtr_po_temam' tema %}">
+                <a class="nav-link" href="{% url 'filtr_po_temam' tema.slug %}">
                   {% if tema == nazvaniye_temi %}
-                    <h5 style="color: blue;">{{ tema }}</h5>
+                    <h5 style="color: blue;">{{ tema.name }}</h5>
                   {% else %}
                     {{ tema }}
                   {% endif %}

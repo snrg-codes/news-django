@@ -4,8 +4,6 @@ from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
-
-
 # Create your models here.
 
 
