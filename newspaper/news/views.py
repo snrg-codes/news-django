@@ -10,7 +10,6 @@ def home(request):
     return render(request, 'news/home.html', {  'posts': posts, 
                                                 'topics': topics})
 
-
 def filtr_po_temam(request, nazvaniye_temi):
     topic = get_object_or_404(Topic, slug=nazvaniye_temi)
     posts = topic.post_set.all().order_by('-created_at')
@@ -26,4 +25,3 @@ def otkrit_post(request, post_slug):
     return render(request, 'news/post.html', {  'post': post, 
                                                 'topics': topics})
                                                 
-

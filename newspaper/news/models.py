@@ -17,6 +17,7 @@ class Topic(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = AutoSlugField(populate_from='title', unique=True, editable=True)
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     content = RichTextUploadingField()
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
