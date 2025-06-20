@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "news",
     "ckeditor",
     "ckeditor_uploader",
+    "sorl.thumbnail",
 ]
 
 MIDDLEWARE = [
