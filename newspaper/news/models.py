@@ -9,14 +9,14 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Topic(models.Model):
     name = models.CharField(max_length=255)
-    slug = AutoSlugField(populate_from='name', unique=True, editable=True)
+    slug = AutoSlugField(populate_from='name', unique=True)
 
     def __str__(self):
         return self.name
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    slug = AutoSlugField(populate_from='title', unique=True, editable=True)
+    slug = AutoSlugField(populate_from='title', unique=True)
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     content = RichTextUploadingField()
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, blank=True, null=True)

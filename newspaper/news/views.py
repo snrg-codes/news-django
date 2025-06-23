@@ -3,12 +3,14 @@ from .models import Post, Topic
 # Create your views here.
 
 def home(request):
-    posts = Post.objects.all().order_by('-created_at')
+    posts = Post.objects.order_by('-created_at')[:6]
     # topics = Topic.objects.values_list('slug', flat=True).distinct()
+    last_post = Post.objects.last()
     topics = Topic.objects.all()
 
     return render(request, 'news/home.html', {  'posts': posts, 
-                                                'topics': topics})
+                                                'topics': topics,
+                                                'last_post': last_post})
 
 def filtr_po_temam(request, nazvaniye_temi):
     topic = get_object_or_404(Topic, slug=nazvaniye_temi)
