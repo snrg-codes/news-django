@@ -5,12 +5,41 @@
 <div class="container">
     <div class="row">
         <div class="col col-8">
-                
+
+            <div class="mt-2 mb-2">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-6 ">      
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{% url 'otkrit_post' last_post.slug %}" style="text-decoration: none;"> 
+                                        {{ last_post.title }}
+                                    </a>
+                                </h5>
+                                <p class="card-text">{{ last_post.content | safe | truncatechars:250}}</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            {% if last_post.image %}
+                    
+                                {% thumbnail last_post.image "300x500" as thumb %}
+    
+                                    <img src="{{ thumb.url }}" width="{{ thumb.width }}"  class="card-img-top" alt="{{last_post.title}}">
+                                
+                                {% endthumbnail %}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+
                     {% for post in posts %}
                     <div class="mt-2 mb-2">
                         <div class="card">
                             <div class="row">
-                                <div class="col-6 ">      
+                                <div class="col-6">      
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <a href="{% url 'otkrit_post' post.slug %}" style="text-decoration: none;"> 

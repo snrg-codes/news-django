@@ -3,7 +3,7 @@ from .models import Post, Topic
 # Create your views here.
 
 def home(request):
-    posts = Post.objects.order_by('-created_at')[:6]
+    posts = Post.objects.order_by('-created_at')[1:6]
     # topics = Topic.objects.values_list('slug', flat=True).distinct()
     last_post = Post.objects.last()
     topics = Topic.objects.all()
