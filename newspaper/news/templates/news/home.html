@@ -10,7 +10,7 @@
                     <div class="mt-2 mb-2">
                         <div class="card">
                             <div class="row">
-                                <div class="col-8">      
+                                <div class="col-6 ">      
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <a href="{% url 'otkrit_post' post.slug %}">
@@ -19,10 +19,10 @@
                                         </h5>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-6">
                                     {% if post.image %}
                             
-                                        {% thumbnail post.image "300x300" as thumb %}
+                                        {% thumbnail post.image "300x500" as thumb %}
             
                                             <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" class="card-img-top" alt="{{post.title}}">
                                         
